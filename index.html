@@ -21,35 +21,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
-  <title>My UG</title>
+  <title>MyUG</title>
 </head>
-
 <body>
-
-
   <div class="d-lg-flex half">
     <div class="bg order-1 order-md-2" style="background-image: url('images/bg_1.jpg');"></div>
     <div class="contents order-2 order-md-1">
-
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7">
-            <br/>
-            <h3>Login to <strong>MY UG</strong></h3>
+            <img src="images/1.png" height="200"/>
+            <h3>Connect Mobile Number</h3>
             <p class="mb-4">Provide your number to get access to affordable pre-paid wifi bundles.</p>
-            <br />
             <form action="#" method="post" onsubmit="process(event)">
               <div class="form-group first">
                 <label for="phone_number">Enter Mobile No.</label>
                 <input type="tel" class="form-control" placeholder="07XXXXXXXX" id="phone_number" style="border:1px;" required><br/>
                 <small class="alert-error" style="display: none; color:red;"></small>
               </div>
-              <input type="submit" value="Continue" class="btn btn-block btn-primary">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" required>
+                <label class="form-check-label" for="flexCheckIndeterminate">
+                  I agree to the Terms and Conditions
+                </label>
+              </div>
+              <input type="submit" value="Continue" class="btn btn-block btn-primary" style="background-color: #e75480; margin-top: 4px;">
             </form>
             <div class="alert alert-info" style="display: none"></div>
-          
-            <br/>
-            <button class="btn btn-block btn-success">Connect for free (6pm-9pm)</button>
+            <button class="btn btn-block btn-outline-success" style="margin-top: 4px;">Connect for free (6pm-9pm)</button>
             <br/>
             <footer>
               <p>© 2021 Soliton Telmec (U) LTD</p>
