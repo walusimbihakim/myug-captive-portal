@@ -1,0 +1,23 @@
+@charset "UTF-8" ;
+/* CSS Document */
+
+#SLIDE_BG {
+    width: 50%;
+    height: 100vh;
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    animation: slideBg 8s linear infinite 0s;
+    animation-timing-function:ease-in-out;
+    background-image:url('./images/1.jpg')
+
+}
+@keyframes slideBg {
+    50%{
+        background-image: ur('./images/1.jpg')
+    }
+50%{
+    background-image:url('./images/2.jpg')
+}
+}
