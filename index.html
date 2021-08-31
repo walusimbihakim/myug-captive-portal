@@ -46,7 +46,8 @@
                 </label>
               </div>
               <a href="paid_access.html">
-                <input type="submit" value="Continue" class="btn btn-block btn-primary" style="background-color: #e75480; margin-top: 4px;">
+                <input type="submit" value="Continue" class="btn btn-block btn-primary" 
+                style="background-color: #e75480; margin-top: 4px;" onclick="get_user_number()">
               </a>
             </form>
             <div class="alert alert-info" style="display: none"></div>
@@ -84,6 +85,11 @@
         error.innerHTML = `Invalid Mobile Number.`;
       }
     }
+
+    function get_user_number() {
+      sessionStorage.setItem('user_number', phoneInputField.value)
+    }
+
   </script>
 </body>
 

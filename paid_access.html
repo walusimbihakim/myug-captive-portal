@@ -41,15 +41,15 @@
                             <div class="wrapper">
                                 <form>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="own_number" value="option1" onclick="get_user_number()">
                                         <label class="form-check-label" for="inlineRadio1">Own Number</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="other_number" value="option2" onclick="get_user_number()">
                                         <label class="form-check-label" for="inlineRadio2">Other Number</label>
                                     </div> <br/><br/>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Phone Number" id="email_address" style="border:1px;" required>
+                                        <input type="text" class="form-control" placeholder="Phone Number" id="phone_number" style="border:1px;" required>
                                     </div>
                                     
                                     <input type="submit" value="Continue" class="btn btn-block btn-primary" style="background-color: #e75480; margin-top: 4px;">
@@ -71,6 +71,19 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+
+        function get_user_number() {
+            own_number = document.querySelector("#own_number");
+
+            if (own_number.checked){
+                document.querySelector("#phone_number").value = sessionStorage.getItem("user_number");
+            }
+            else
+                document.querySelector("#phone_number").value = "";
+        }
+
 </body>
 
 </html>

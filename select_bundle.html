@@ -37,21 +37,21 @@
                         <form action="#" method="post">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault1">
+                                    id="daily_unlimited" onclick="compute_total()" checked>
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Unlimited Daily - UGX 826
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2" checked>
+                                    id="weekly_unlimited" onclick="compute_total()">
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Unlimited Weekly - UGX 5,782
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                    id="flexRadioDefault2" checked>
+                                    id="monthly_unlimited" onclick="compute_total()">
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Unlimited Monthly - UGX 24,780
                                 </label>
@@ -59,12 +59,12 @@
                             <br />
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Select No. of devices</label>
-                                <input type="number" class="form-control" id="exampleInputEmail1" value="1">
+                                <input type="number" class="form-control" id="id_devices" value="1" onChange="compute_total()">
                             </div>
                             <br />
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Total Amount</label>
-                                <input type="number" class="form-control" id="exampleInputEmail1">
+                                <input type="number" class="form-control" id="id_total_amount" disabled>
                             </div>
 
                             <br />
@@ -81,6 +81,35 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        function compute_total() {
+
+            daily_unlimited = document.querySelector("#daily_unlimited");
+            weekly_unlimited = document.querySelector("#weekly_unlimited");
+            monthly_unlimited = document.querySelector("#monthly_unlimited");
+
+            total = 0;
+            no_of_devices = document.querySelector("#id_devices").value;
+
+            if (daily_unlimited.checked){
+                total = no_of_devices * 826;
+            }
+            else if (weekly_unlimited.checked){
+                total = no_of_devices * 5782;
+            }
+            else if (monthly_unlimited.checked){
+                total = no_of_devices * 24780;
+            }
+            
+
+            document.querySelector("#id_total_amount").value = total
+
+        }
+        
+    </script>
 </body>
 
 </html>
